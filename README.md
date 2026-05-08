@@ -8,6 +8,9 @@ Project to draw a triangle on an HTML Canvas using Rust and WebAssembly.
 以下软件已经安装
 - Rust
 - uv
+- WebAssembly/binaryen installed (for `wasm-opt`)
+  - Or use pack-binaryen.py script to install it
+- A modern web browser that supports WebAssembly (e.g., Chrome, Firefox, Edge)
 
 ## Getting Started / 快速开始
 ```bash
@@ -16,6 +19,7 @@ rustup target add wasm32-unknown-unknown
 
 # 安装 wasm-pack 工具
 cargo install wasm-pack
+cargo install wasm-bindgen-cli
 
 # 创建一个名为 "wasm-triangle" 的新库项目
 # cargo new --lib wasm-triangle

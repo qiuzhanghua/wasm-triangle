@@ -9,7 +9,7 @@ Project to draw a triangle on an HTML Canvas using Rust and WebAssembly.
 - Rust
 - uv
 - WebAssembly/binaryen installed (for `wasm-opt`)
-  - Or use pack-binaryen.py script to install it
+  - Or use References / 参考资料 below to pack the WASM Tools with TDP
 - A modern web browser that supports WebAssembly (e.g., Chrome, Firefox, Edge)
 
 ## Getting Started / 快速开始
@@ -19,7 +19,9 @@ rustup target add wasm32-unknown-unknown
 
 # 安装 wasm-pack 工具
 cargo install wasm-pack
+# Or use References / 参考资料 below to pack the WASM Tools with TDP
 cargo install wasm-bindgen-cli
+# Or use References / 参考资料 below to pack the WASM Tools with TDP
 
 # 创建一个名为 "wasm-triangle" 的新库项目
 # cargo new --lib wasm-triangle
@@ -47,3 +49,9 @@ Then open http://127.0.0.1:8000 in your browser.
 - Rust + `wasm-bindgen`
 - WebAssembly
 - HTML5 Canvas
+
+## References / 参考资料
+use TDP and the following scripts to pack the WASM Tools:
+- [pack-wasm-pack.py](https://git.taiji.com.cn/tj/tdp-scripts/src/branch/main/pack-wasm-pack.py)
+- - [pack-wasm-bindgen.py](https://git.taiji.com.cn/tj/tdp-scripts/src/branch/main/pack-wasm-bindgen.py)
+- [pack-binaryen.py](https://git.taiji.com.cn/tj/tdp-scripts/src/branch/main/pack-binaryen.py)

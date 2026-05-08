@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>使用Rust+WASM绘制三角形</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- 创建一个ID为 "canvas" 的 canvas 元素，宽度和高度都设置为600像素 -->
+    <canvas id="canvas" width="600" height="600"></canvas>
+
+    <!-- 通过 type="module" 导入并使用我们的WASM模块 -->
+    <script type="module">
+        import init, { start } from './pkg/wasm_triangle.js';
+
+        async function run() {
+            // 初始化WASM模块，这一步是必要的
+            await init();
+            // 调用我们在Rust中定义的 start 函数来绘制三角形
+            start();
+        }
+
+        run();
+    </script>
+</body>
+</html>
